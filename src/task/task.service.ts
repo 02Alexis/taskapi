@@ -2,6 +2,8 @@
 import { Injectable } from '@nestjs/common';
 import { InjectModel } from '@nestjs/mongoose';
 import { Model } from 'mongoose';
+import { CreateTaskDTO } from 'src/dto/create-task.dto';
+import { UpdateTaskDTO } from 'src/dto/update-task.dto';
 import { Task } from 'src/schemas/task.schema';
 
 @Injectable()
@@ -13,7 +15,7 @@ export class TaskService {
   }
 
   // Crear tareas
-  async create(createTask: any) {
+  async create(createTask: CreateTaskDTO) {
     const newTask = new this.TaskModel(createTask); // Creamos
     return newTask.save(); //Guardamos
   }
@@ -29,7 +31,7 @@ export class TaskService {
   }
 
   // Actualizar una tarea
-  async update(id: string, task: any) {
+  async update(id: string, task: UpdateTaskDTO) {
     return this.TaskModel.findByIdAndUpdate(id, task);
   }
 }
