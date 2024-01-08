@@ -6,6 +6,9 @@ import {
   Delete,
   Body,
   Param,
+  ConflictException,
+  NotFoundException,
+  HttpCode,
 } from '@nestjs/common';
 import { TaskService } from './task.service';
 import { CreateTaskDTO } from 'src/dto/create-task.dto';
@@ -21,22 +24,36 @@ export class TaskController {
   }
 
   @Get(':id')
-  findOne(@Param('id') id: string) {
-    return this.tasksService.findOne(id);
+  async findOne(@Param('id') id: string) {
+    const task = await this.tasksService.findOne(id);
+    if (!task) throw new NotFoundException('Tarea no encontrada');
+    return task;
   }
 
   @Post()
-  Create(@Body() body: CreateTaskDTO) {
-    return this.tasksService.create(body);
+  async Create(@Body() body: CreateTaskDTO) {
+    try {
+      return await this.tasksService.create(body);
+    } catch (error) {
+      if (error.code === 11000) {
+        throw new ConflictException('Tarea ya existe');
+      }
+      throw error;
+    }
   }
 
   @Delete(':id')
-  delete(@Param('id') id: string) {
-    return this.tasksService.delete(id);
+  @HttpCode(204)
+  async delete(@Param('id') id: string) {
+    const task = await this.tasksService.delete(id);
+    if (!task) throw new NotFoundException('Tarea no encontrada');
+    return task;
   }
 
   @Put(':id')
-  update(@Param('id') id: string, @Body() body: UpdateTaskDTO) {
-    return this.tasksService.update(id, body);
+  async update(@Param('id') id: string, @Body() body: UpdateTaskDTO) {
+    const task = await this.tasksService.update(id, body);
+    if (!task) throw new NotFoundException('Tarea no encontrada');
+    return task;
   }
 }
