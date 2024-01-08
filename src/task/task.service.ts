@@ -11,7 +11,7 @@ export class TaskService {
   constructor(@InjectModel(Task.name) private TaskModel: Model<Task>) {}
 
   finAll() {
-    this.TaskModel.find();
+    return this.TaskModel.find();
   }
 
   // Crear tareas
@@ -32,6 +32,6 @@ export class TaskService {
 
   // Actualizar una tarea
   async update(id: string, task: UpdateTaskDTO) {
-    return this.TaskModel.findByIdAndUpdate(id, task);
+    return this.TaskModel.findByIdAndUpdate(id, task, { new: true });
   }
 }
