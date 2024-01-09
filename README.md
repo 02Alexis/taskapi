@@ -22,6 +22,8 @@
  
 # <p align="center">Documentación <a href="https://github.com/02Alexis/taskapi/wiki/Componente-T%C3%A9cnico" target="_blank">como usar la app</a></p>
 
+## <p align="center">Repositorio donde se encuentra el <a href="https://github.com/02Alexis/tasksfront.git" target="_blank">Front-End</a></p>
+
 Este repositorio contiene un proyecto de backend desarrollado con NestJS y MongoDB. A continuación, se detalla cómo configurar el proyecto.
 
 ## Configuración de Variables de Entorno
