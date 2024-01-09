@@ -20,6 +20,8 @@
   <a href="https://twitter.com/nestframework" target="_blank"><img src="https://img.shields.io/twitter/follow/nestframework.svg?style=social&label=Follow"></a>
 </p>
  
+# <p align="center">Documentación <a href="https://github.com/02Alexis/taskapi/wiki/Componente-T%C3%A9cnico" target="_blank">como usar la app</a></p>
+
 Este repositorio contiene un proyecto de backend desarrollado con NestJS y MongoDB. A continuación, se detalla cómo configurar el proyecto.
 
 ## Configuración de Variables de Entorno
