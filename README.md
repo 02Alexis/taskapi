@@ -19,55 +19,36 @@
     <a href="https://opencollective.com/nest#sponsor"  target="_blank"><img src="https://img.shields.io/badge/Support%20us-Open%20Collective-41B883.svg" alt="Support us"></a>
   <a href="https://twitter.com/nestframework" target="_blank"><img src="https://img.shields.io/twitter/follow/nestframework.svg?style=social&label=Follow"></a>
 </p>
-  <!--[![Backers on Open Collective](https://opencollective.com/nest/backers/badge.svg)](https://opencollective.com/nest#backer)
-  [![Sponsors on Open Collective](https://opencollective.com/nest/sponsors/badge.svg)](https://opencollective.com/nest#sponsor)-->
+ 
+Este repositorio contiene un proyecto de backend desarrollado con NestJS y MongoDB. A continuación, se detalla cómo configurar el proyecto.
 
-## Description
+## Configuración de Variables de Entorno
 
-[Nest](https://github.com/nestjs/nest) framework TypeScript starter repository.
-
-## Installation
+Para que el proyecto funcione correctamente, es necesario configurar las variables de entorno en un archivo `.env` en la raíz del proyecto. Puedes crear este archivo y pegar los siguientes datos:
 
 ```bash
-$ npm install
+BD_URI=credencialesdetubasededatos
+```
+Asegúrate de reemplazar `credencialesdetubasededatos` con la URL de tu base de datos MongoDB ya sea local o en la nube usando MongoDB Atlas o cual quier otra DB de tu preferencia. Estas variables se utilizan para configurar la conexión a la base de datos.
+
+# Sigue estos pasos para configurar y ejecutar el proyecto en tu entorno local:
+
+1. Clona el repositorio utilizando el siguiente comando:
+
+```sh
+git clone https://github.com/02Alexis/taskapi.git
+
+# Navega al directorio del proyecto:
+cd taskapi
+
+# Instala las dependencias del proyecto
+npm install
+
+# Inicia el servidor de desarrollo:
+npm run start:dev
 ```
 
-## Running the app
+Una vez que el servidor esté en funcionamiento, puedes acceder en tu navegador web. Abre el siguiente enlace:
+`http://localhost:3000/api/task`
 
-```bash
-# development
-$ npm run start
-
-# watch mode
-$ npm run start:dev
-
-# production mode
-$ npm run start:prod
-```
-
-## Test
-
-```bash
-# unit tests
-$ npm run test
-
-# e2e tests
-$ npm run test:e2e
-
-# test coverage
-$ npm run test:cov
-```
-
-## Support
-
-Nest is an MIT-licensed open source project. It can grow thanks to the sponsors and support by the amazing backers. If you'd like to join them, please [read more here](https://docs.nestjs.com/support).
-
-## Stay in touch
-
-- Author - [Kamil Myśliwiec](https://kamilmysliwiec.com)
-- Website - [https://nestjs.com](https://nestjs.com/)
-- Twitter - [@nestframework](https://twitter.com/nestframework)
-
-## License
-
-Nest is [MIT licensed](LICENSE).
+¡Disfruta explorando y probando este proyecto de NestJS con MongoDB!
